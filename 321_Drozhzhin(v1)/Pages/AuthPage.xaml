@@ -1,0 +1,73 @@
+﻿<Page x:Class="_321_Drozhzhin_v1_.Pages.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_321_Drozhzhin_v1_.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthPage">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Label 1 -->
+            <RowDefinition Height="Auto"/>
+            <!-- TextBox -->
+            <RowDefinition Height="10"/>
+            <!-- Spacer -->
+            <RowDefinition Height="Auto"/>
+            <!-- Label 2 -->
+            <RowDefinition Height="Auto"/>
+            <!-- PasswordBox -->
+            <RowDefinition Height="20"/>
+            <!-- Spacer -->
+            <RowDefinition Height="Auto"/>
+            <!-- Buttons -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Label 1 -->
+        <Label Grid.Row="0" Content="Логин" 
+           HorizontalAlignment="Stretch" VerticalAlignment="Center"
+           ToolTip="Введите ваше имя пользователя"/>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,5,0,0">
+            <TextBox Name="TextBoxLogin" 
+             HorizontalAlignment="Stretch" Margin="0,5,0,0"
+             ToolTip="Поле для ввода логина"
+             Foreground="Gray" TextChanged="TextBoxLogin_TextChanged"/>
+
+            <TextBlock Text="Логин или почта" Foreground="Gray" 
+             Name="txtHintLogin" Margin="4,8,0,0" 
+             VerticalAlignment="Top" Width="140" 
+             Grid.Row="1" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <!-- Label 2 -->
+        <Label Grid.Row="3" Content="Пароль" 
+           HorizontalAlignment="Stretch" VerticalAlignment="Center"
+           ToolTip="Введите ваш пароль"/>
+
+
+        <Grid Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,5,0,0">
+            <PasswordBox Name="PasswordBox" 
+                     ToolTip="Поле для ввода пароля" PasswordChanged="PasswordBox_PasswordChanged"/>
+            <TextBlock Name="PasswordPlaceholder" 
+                   Text="пароль" 
+                   Foreground="Gray" 
+                   Margin="5,0,0,0"
+                   VerticalAlignment="Center"
+                   IsHitTestVisible="False"
+                   Visibility="Visible"/>
+        </Grid>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="Вход" Width="75" Margin="0,0,10,0" 
+                ToolTip="Нажмите, чтобы войти" Click="ButtonEnter_OnClick"/>
+            <Button Content="Регистрация" Width="110" 
+                ToolTip="Нажмите, чтобы отменить" x:Name="RegBtn" Click="RegBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
